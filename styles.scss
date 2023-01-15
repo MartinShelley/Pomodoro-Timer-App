@@ -1,0 +1,421 @@
+$backgroundColor: #1e213f;
+$red: #f87070;
+$turquoise: #70f3f8;
+$pink: #d881f8;
+$timerColor: #d7e0ff;
+$settingsTextColor: #161932;
+
+html {
+  max-width: 100%;
+  background: $backgroundColor;
+}
+
+.title,
+.settings-icon {
+  display: block;
+  margin: 50px auto;
+}
+
+.settings-icon:hover,
+.close-icon:hover,
+.topArrow:hover,
+.bottomArrow:hover {
+  cursor: pointer;
+}
+
+.selectionItem,
+.clock,
+.action,
+.settings,
+#kumbhSansFont {
+  font-family: "Kumbh Sans";
+}
+
+.selection {
+  background: #161932;
+  border-radius: 31.5px;
+  width: 373px;
+  height: 63px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+
+  ul {
+    padding-top: 20px;
+    list-style: none;
+    padding-left: 10px;
+
+    li {
+      width: 120px;
+      display: inline;
+
+      a {
+        font-weight: bold;
+        font-style: normal;
+        color: $timerColor;
+        opacity: 0.4;
+        font-size: 14px;
+        padding: 20px;
+        cursor: pointer;
+      }
+    }
+
+    .selected {
+      background-color: $red;
+      height: 48px;
+      border-radius: 26.5px;
+      color: $backgroundColor;
+      padding: 15px 25px;
+      opacity: 1;
+      cursor: auto;
+    }
+  }
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .outsideCircle {
+    width: 410px;
+    height: 410px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+    box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+    border-radius: 50%;
+    // margin-left: auto;
+    // margin-right: auto;
+
+    .darkerCircle {
+      // position: relative;
+      // top: 22px;
+      width: 366px;
+      height: 366px;
+      background: #161932;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // margin-left: auto;
+      // margin-right: auto;
+
+      .timer-text {
+        text-align: center;
+
+        text {
+          font-weight: bold;
+          color: $timerColor;
+          // position: absolute;
+        }
+
+
+
+        .clock {
+          font-size: 100px;
+          fill: $timerColor;
+          letter-spacing: -5px;
+          // top: 125px;
+          // left: 62.5px;
+        }
+
+        .action {
+          font-size: 16px;
+          letter-spacing: 15px;
+          margin-right: -15px;
+          // top: 265px;
+          // left: 130px;
+        }
+      }
+
+      svg {
+        position: absolute;
+        height: 355px;
+        width: 355px;
+        // position: absolute;
+        // top: 13.5px;
+        // left: 13.5px;
+        // margin-left: auto;
+        // margin-right: auto;
+        transform: rotateY(-180deg) rotateZ(-90deg);
+
+        circle {
+          stroke: $red;
+          stroke-width: 10px;
+          fill: transparent;
+          stroke-dasharray: 1037px;
+          stroke-dashoffset: 0px;
+        }
+      }
+    }
+  }
+}
+
+.countdown {
+  animation-name: countdown;
+  animation-duration: 1500s;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+}
+
+@keyframes countdown {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+
+  100% {
+    stroke-dashoffset: -1037px;
+  }
+}
+
+#settings-modal {
+  display: none;
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 12, 28, 0.5);
+  }
+
+  .settings {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 540px;
+    height: 464px;
+    border-radius: 25px;
+    color: $settingsTextColor;
+
+    .topSettingsSection {
+      display: flex;
+      justify-content: space-between;
+
+      h2 {
+        // font-family: "Kumbh Sans";
+        font-weight: 700;
+        font-size: 28px;
+        width: 197px;
+        margin-left: 40px;
+        margin-top: 34px;
+      }
+
+      img {
+        margin-right: 38px;
+        margin-top: 47px;
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    .horizontalLine {
+      border: 0;
+      border-top: 1px solid #e3e1e1;
+    }
+
+    .shorterLine {
+      width: 460px;
+    }
+
+    .settingsSection {
+      margin-left: 40px;
+
+      h3 {
+        font-size: 13px;
+        letter-spacing: 5px;
+        font-weight: bold;
+      }
+    }
+
+    .timeSection {
+      display: flex;
+
+      .timeSelection {
+        position: relative;
+
+        label {
+          font-size: 12px;
+          font-weight: bold;
+          font-style: normal;
+          color: $backgroundColor;
+          opacity: 0.4;
+        }
+
+        input[type="number"] {
+          background: #eff1fa;
+          height: 48px;
+          width: 124px;
+          border: 0;
+          border-radius: 10px;
+          margin-top: 8px;
+          margin-right: 20px;
+          padding: 0;
+          font-weight: 700;
+          font-size: 14px;
+          font-style: normal;
+          padding-left: 16px;
+          opacity: 1;
+          // -moz-appearance: textfield;
+        }
+
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        .topArrow {
+          position: absolute;
+          top: 38px;
+          left: 112px;
+        }
+
+        .bottomArrow {
+          position: absolute;
+          top: 51px;
+          left: 112px;
+        }
+      }
+
+      #shortBreakTime {
+        margin-right: 22px;
+      }
+
+      #longBreakTime {
+        margin-right: 38px;
+      }
+    }
+
+    .fontSection,
+    .colorSection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 38px;
+    }
+
+    .radioButtons {
+      display: flex;
+    }
+
+    input[type="radio"] {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+
+    .customRadio {
+      display: block;
+      height: 36px;
+      width: 36px;
+      padding: 4px;
+      border-radius: 50%;
+      margin: 24px 0 24px 16px;
+    }
+
+    .fontSection {
+      .radioButtons {
+        label {
+          span {
+            display: flex;
+            flex-direction: column;
+          }
+        }
+
+        input[type="radio"]:checked+span {
+          background: $settingsTextColor;
+          color: white;
+          opacity: 1;
+        }
+
+        #robotoSlabFont {
+          font-family: "Roboto Slab";
+        }
+
+        #spaceMonoFont {
+          font-family: "Space Mono";
+        }
+      }
+    }
+
+    .customFontRadio {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 700;
+      background: #eff1fa;
+      opacity: 0.73;
+    }
+
+    .colorSection {
+      .radioButtons {
+        label {
+          span {
+            display: flex;
+            flex-direction: column;
+
+            input[type="radio"]:checked+span {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            input[type="radio"]:checked+span>a {
+              display: inline-block;
+              width: 5px;
+              height: 12px;
+              border-bottom: 2px solid $settingsTextColor;
+              border-right: 2px solid $settingsTextColor;
+              transform: rotate(45deg);
+            }
+
+            #redRadioButton {
+              background: $red;
+            }
+
+            #turquoiseRatioButton {
+              background: $turquoise;
+            }
+
+            #pinkRadioButton {
+              background: $pink;
+            }
+          }
+        }
+      }
+    }
+
+    #submit {
+      width: 140px;
+      height: 53px;
+      background: $red;
+      color: #fff;
+      border-radius: 26.5px;
+      border: 0;
+      font-size: 16px;
+      font-weight: bold;
+      margin-left: 201px;
+    }
+  }
+}
+
+//Mobile devices
+@media screen and (max-width: 414px) {
+  html {
+    overflow-x: hidden;
+  }
+
+  .settings {
+    left: calc((1024px - 540px) / 2);
+  }
+}

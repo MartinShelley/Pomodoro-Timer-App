@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto+Slab:wght@700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Frontend Mentor | Pomodoro app</title>
+</head>
+
+<body>
+  <header>
+    <img src="../assets/logo.svg" class="title">
+  </header>
+  <main>
+    <div class="selection">
+      <ul>
+        <li><a class="selected selectionItem">pomodoro</a></li>
+        <li><a class="selectionItem">short break</a></li>
+        <li><a class="selectionItem">long break</a></li>
+      </ul>
+    </div>
+    <div class="timer">
+      <div class="outsideCircle"> <!--outside circle-->
+        <div class="darkerCircle"> <!--darker cirle-->
+          <svg>
+            <circle cx="50%" cy="50%" r="165" />
+          </svg>
+          <div class="timer-text">
+            <text class="clock" x="50%" y="210" text-anchor="middle">25:00</text>
+            <text class="action" x="50%" y="50%" text-anchor="middle">START</text>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <img src="../assets/icon-settings.svg" class="settings-icon">
+    <div id="settings-modal">
+      <div class="backdrop"></div>
+      <div class="settings">
+        <form>
+          <span class="topSettingsSection">
+            <h2>Settings</h2>
+            <img class="close-icon" src="../assets/icon-close.svg">
+          </span>
+          <hr class="horizontalLine" />
+          <div class="settingsSection">
+            <h3>TIME (MINUTES)</h3>
+            <div class="timeSection">
+              <div class="timeSelection">
+                <label for="pomodoroTime">pomodoro</label>
+                <input id="pomodoroTime" type="number" value=25 min=1 max=60>
+                <img class="topArrow" src="../assets/icon-arrow-up.svg">
+                <img class="bottomArrow" src="../assets/icon-arrow-down.svg">
+              </div>
+              <div class="timeSelection">
+                <label for="shortBreakTime">short break</label>
+                <input id="shortBreakTime" type="number" value=5 min=1 max=15>
+                <img class="topArrow" src="../assets/icon-arrow-up.svg">
+                <img class="bottomArrow" src="../assets/icon-arrow-down.svg">
+                </input>
+              </div>
+              <div class="timeSelection">
+                <label for="longBreakTime">long break</label>
+                <input id="longBreakTime" type="number" value=15 min=15 max=60>
+                <img class="topArrow" src="../assets/icon-arrow-up.svg">
+                <img class="bottomArrow" src="../assets/icon-arrow-down.svg">
+                </input>
+              </div>
+            </div>
+          </div>
+          <hr class="horizontalLine shorterLine" />
+          <div class="settingsSection fontSection">
+            <h3>FONT</h3>
+            <div class="radioButtons">
+              <label>
+                <span>
+                  <input type="radio" name="fontSelection" value="Kumbh Sans" checked>
+                  <span id="kumbhSansFont" class="customRadio customFontRadio">Aa</span>
+                </span>
+              </label>
+              <label>
+                <span>
+                  <input type="radio" name="fontSelection" value="Roboto Slab">
+                  <span id="robotoSlabFont" class="customRadio customFontRadio">Aa</span>
+                </span>
+              </label>
+              <label>
+                <span>
+                  <input type="radio" name="fontSelection" value="Space Mono">
+                  <span id="spaceMonoFont" class="customRadio customFontRadio">Aa</span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <hr class="horizontalLine shorterLine" />
+          <div class="settingsSection colorSection">
+            <h3>COLOR</h3>
+            <div class="radioButtons">
+              <label>
+                <span>
+                  <input type="radio" name="colorSelection" value="#f87070" checked>
+                  <span id="redRadioButton" class="customRadio"><a></a></span>
+                </span>
+              </label>
+              <label>
+                <span>
+                  <input type="radio" name="colorSelection" value="#70f3f8">
+                  <span id="turquoiseRatioButton" class="customRadio"><a></a></span>
+                </span>
+              </label>
+              <label>
+                <span>
+                  <input type="radio" name="colorSelection" value="#d881f8">
+                  <span id="pinkRadioButton" class="customRadio"><a></a></span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <input id="submit" type="submit" value="Apply">
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,346 @@
+html {
+  max-width: 100%;
+  background: #1e213f;
+}
+
+.title,
+.settings-icon {
+  display: block;
+  margin: 50px auto;
+}
+
+.settings-icon:hover,
+.close-icon:hover,
+.topArrow:hover,
+.bottomArrow:hover {
+  cursor: pointer;
+}
+
+.selectionItem,
+.clock,
+.action,
+.settings,
+#kumbhSansFont {
+  font-family: "Kumbh Sans";
+}
+
+.selection {
+  background: #161932;
+  border-radius: 31.5px;
+  width: 373px;
+  height: 63px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+.selection ul {
+  padding-top: 20px;
+  list-style: none;
+  padding-left: 10px;
+}
+.selection ul li {
+  width: 120px;
+  display: inline;
+}
+.selection ul li a {
+  font-weight: bold;
+  font-style: normal;
+  color: #d7e0ff;
+  opacity: 0.4;
+  font-size: 14px;
+  padding: 20px;
+  cursor: pointer;
+}
+.selection ul .selected {
+  background-color: #f87070;
+  height: 48px;
+  border-radius: 26.5px;
+  color: #1e213f;
+  padding: 15px 25px;
+  opacity: 1;
+  cursor: auto;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.timer .outsideCircle {
+  width: 410px;
+  height: 410px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+  box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+  border-radius: 50%;
+}
+.timer .outsideCircle .darkerCircle {
+  width: 366px;
+  height: 366px;
+  background: #161932;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.timer .outsideCircle .darkerCircle .timer-text {
+  text-align: center;
+}
+.timer .outsideCircle .darkerCircle .timer-text text {
+  font-weight: bold;
+  color: #d7e0ff;
+}
+.timer .outsideCircle .darkerCircle .timer-text .clock {
+  font-size: 100px;
+  fill: #d7e0ff;
+  letter-spacing: -5px;
+}
+.timer .outsideCircle .darkerCircle .timer-text .action {
+  font-size: 16px;
+  letter-spacing: 15px;
+  margin-right: -15px;
+}
+.timer .outsideCircle .darkerCircle svg {
+  position: absolute;
+  height: 355px;
+  width: 355px;
+  transform: rotateY(-180deg) rotateZ(-90deg);
+}
+.timer .outsideCircle .darkerCircle svg circle {
+  stroke: #f87070;
+  stroke-width: 10px;
+  fill: transparent;
+  stroke-dasharray: 1037px;
+  stroke-dashoffset: 0px;
+}
+
+.countdown {
+  -webkit-animation-name: countdown;
+          animation-name: countdown;
+  -webkit-animation-duration: 1500s;
+          animation-duration: 1500s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes countdown {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+  100% {
+    stroke-dashoffset: -1037px;
+  }
+}
+
+@keyframes countdown {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+  100% {
+    stroke-dashoffset: -1037px;
+  }
+}
+#settings-modal {
+  display: none;
+}
+#settings-modal .backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 12, 28, 0.5);
+}
+#settings-modal .settings {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 540px;
+  height: 464px;
+  border-radius: 25px;
+  color: #161932;
+}
+#settings-modal .settings .topSettingsSection {
+  display: flex;
+  justify-content: space-between;
+}
+#settings-modal .settings .topSettingsSection h2 {
+  font-weight: 700;
+  font-size: 28px;
+  width: 197px;
+  margin-left: 40px;
+  margin-top: 34px;
+}
+#settings-modal .settings .topSettingsSection img {
+  margin-right: 38px;
+  margin-top: 47px;
+  width: 14px;
+  height: 14px;
+}
+#settings-modal .settings .horizontalLine {
+  border: 0;
+  border-top: 1px solid #e3e1e1;
+}
+#settings-modal .settings .shorterLine {
+  width: 460px;
+}
+#settings-modal .settings .settingsSection {
+  margin-left: 40px;
+}
+#settings-modal .settings .settingsSection h3 {
+  font-size: 13px;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+#settings-modal .settings .timeSection {
+  display: flex;
+}
+#settings-modal .settings .timeSection .timeSelection {
+  position: relative;
+  /* Chrome, Safari, Edge, Opera */
+}
+#settings-modal .settings .timeSection .timeSelection label {
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  color: #1e213f;
+  opacity: 0.4;
+}
+#settings-modal .settings .timeSection .timeSelection input[type=number] {
+  background: #eff1fa;
+  height: 48px;
+  width: 124px;
+  border: 0;
+  border-radius: 10px;
+  margin-top: 8px;
+  margin-right: 20px;
+  padding: 0;
+  font-weight: 700;
+  font-size: 14px;
+  font-style: normal;
+  padding-left: 16px;
+  opacity: 1;
+}
+#settings-modal .settings .timeSection .timeSelection input::-webkit-outer-spin-button,
+#settings-modal .settings .timeSection .timeSelection input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#settings-modal .settings .timeSection .timeSelection .topArrow {
+  position: absolute;
+  top: 38px;
+  left: 112px;
+}
+#settings-modal .settings .timeSection .timeSelection .bottomArrow {
+  position: absolute;
+  top: 51px;
+  left: 112px;
+}
+#settings-modal .settings .timeSection #shortBreakTime {
+  margin-right: 22px;
+}
+#settings-modal .settings .timeSection #longBreakTime {
+  margin-right: 38px;
+}
+#settings-modal .settings .fontSection,
+#settings-modal .settings .colorSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 38px;
+}
+#settings-modal .settings .radioButtons {
+  display: flex;
+}
+#settings-modal .settings input[type=radio] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+#settings-modal .settings .customRadio {
+  display: block;
+  height: 36px;
+  width: 36px;
+  padding: 4px;
+  border-radius: 50%;
+  margin: 24px 0 24px 16px;
+}
+#settings-modal .settings .fontSection .radioButtons label span {
+  display: flex;
+  flex-direction: column;
+}
+#settings-modal .settings .fontSection .radioButtons input[type=radio]:checked + span {
+  background: #161932;
+  color: white;
+  opacity: 1;
+}
+#settings-modal .settings .fontSection .radioButtons #robotoSlabFont {
+  font-family: "Roboto Slab";
+}
+#settings-modal .settings .fontSection .radioButtons #spaceMonoFont {
+  font-family: "Space Mono";
+}
+#settings-modal .settings .customFontRadio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  background: #eff1fa;
+  opacity: 0.73;
+}
+#settings-modal .settings .colorSection .radioButtons label span {
+  display: flex;
+  flex-direction: column;
+}
+#settings-modal .settings .colorSection .radioButtons label span input[type=radio]:checked + span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#settings-modal .settings .colorSection .radioButtons label span input[type=radio]:checked + span > a {
+  display: inline-block;
+  width: 5px;
+  height: 12px;
+  border-bottom: 2px solid #161932;
+  border-right: 2px solid #161932;
+  transform: rotate(45deg);
+}
+#settings-modal .settings .colorSection .radioButtons label span #redRadioButton {
+  background: #f87070;
+}
+#settings-modal .settings .colorSection .radioButtons label span #turquoiseRatioButton {
+  background: #70f3f8;
+}
+#settings-modal .settings .colorSection .radioButtons label span #pinkRadioButton {
+  background: #d881f8;
+}
+#settings-modal .settings #submit {
+  width: 140px;
+  height: 53px;
+  background: #f87070;
+  color: #fff;
+  border-radius: 26.5px;
+  border: 0;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 201px;
+}
+
+@media screen and (max-width: 414px) {
+  html {
+    overflow-x: hidden;
+  }
+  .settings {
+    left: 242px;
+  }
+}/*# sourceMappingURL=styles.css.map */
