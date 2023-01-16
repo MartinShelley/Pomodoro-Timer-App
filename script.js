@@ -1,3 +1,12 @@
+/*
+To Do
+Need to sort selection area. Last font screws it up
+Countdown animation
+Tablet & Mobile views
+Cypress
+
+*/
+
 (function () {
 
   let settings = {
@@ -20,7 +29,7 @@
   }
 
   const settingFont = () => {
-    let fontSelection = localStorage.getItem('font');
+    let fontSelection = settings.font;
     document.querySelectorAll('.selectionItem, .clock, .action').forEach((element) => {
       element.style.fontFamily = settings.font;
     });
@@ -31,6 +40,7 @@
         document.querySelector('.clock').style.fontWeight = "bold";
         document.querySelectorAll('.selectionItem').forEach((element) => {
           element.style.fontSize = "14px";
+          // element.style.padding = "20px";
         });
         break;
       case "Roboto Slab":
@@ -38,6 +48,7 @@
         document.querySelector('.clock').style.fontWeight = "bold";
         document.querySelectorAll('.selectionItem').forEach((element) => {
           element.style.fontSize = "14px";
+          // element.style.padding = "20px";
         });
         break;
       case "Space Mono":
@@ -45,6 +56,7 @@
         document.querySelector('.clock').style.fontWeight = "normal";
         document.querySelectorAll('.selectionItem').forEach((element) => {
           element.style.fontSize = "13px";
+          // element.style.padding = "18px";
         });
     }
   };

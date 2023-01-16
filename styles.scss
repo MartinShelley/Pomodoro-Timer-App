@@ -32,6 +32,7 @@ html {
 }
 
 .selection {
+  display: flex;
   background: #161932;
   border-radius: 31.5px;
   width: 373px;
@@ -39,15 +40,19 @@ html {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
+  align-items: center;
+  justify-content: center;
 
   ul {
-    padding-top: 20px;
+    display: flex;
+    // padding-top: 20px;
     list-style: none;
-    padding-left: 10px;
+    // padding-left: 10px;
+    padding: 0;
 
     li {
-      width: 120px;
-      display: inline;
+      // width: 120px;
+      // display: inline;
 
       a {
         font-weight: bold;
@@ -111,8 +116,6 @@ html {
           color: $timerColor;
           // position: absolute;
         }
-
-
 
         .clock {
           font-size: 100px;
