@@ -149,31 +149,31 @@ html {
           stroke: $red;
           stroke-width: 10px;
           fill: transparent;
-          stroke-dasharray: 1037px;
-          stroke-dashoffset: 0px;
+          // stroke-dasharray: 1037px;
+          stroke-dashoffset: 0;
         }
       }
     }
   }
 }
 
-.countdown {
-  animation-name: countdown;
-  animation-duration: 1500s;
-  animation-timing-function: linear;
-  animation-play-state: paused;
-  animation-fill-mode: forwards;
-}
+// .countdown {
+//   animation-name: countdown;
+//   animation-timing-function: linear;
+//   animation-play-state: paused;
+//   animation-fill-mode: forwards;
+//   animation-duration: calc(25*60)s;
+// }
 
-@keyframes countdown {
-  0% {
-    stroke-dashoffset: 0px;
-  }
+// @keyframes countdown {
+//   0% {
+//     stroke-dashoffset: 0;
+//   }
 
-  100% {
-    stroke-dashoffset: -1037px;
-  }
-}
+//   100% {
+//     stroke-dashoffset: -1037;
+//   }
+// }
 
 #settings-modal {
   display: none;

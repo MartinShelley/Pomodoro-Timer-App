@@ -112,40 +112,9 @@ html {
   stroke: #f87070;
   stroke-width: 10px;
   fill: transparent;
-  stroke-dasharray: 1037px;
-  stroke-dashoffset: 0px;
+  stroke-dashoffset: 0;
 }
 
-.countdown {
-  -webkit-animation-name: countdown;
-          animation-name: countdown;
-  -webkit-animation-duration: 1500s;
-          animation-duration: 1500s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes countdown {
-  0% {
-    stroke-dashoffset: 0px;
-  }
-  100% {
-    stroke-dashoffset: -1037px;
-  }
-}
-
-@keyframes countdown {
-  0% {
-    stroke-dashoffset: 0px;
-  }
-  100% {
-    stroke-dashoffset: -1037px;
-  }
-}
 #settings-modal {
   display: none;
 }

@@ -21,19 +21,19 @@
   <main>
     <nav class="selection">
       <ul>
-        <li><a class="selected selectionItem">pomodoro</a></li>
-        <li><a class="selectionItem">short break</a></li>
-        <li><a class="selectionItem">long break</a></li>
+        <li><a class="selected selectionItem" nav-item="pomodoro">pomodoro</a></li>
+        <li><a class="selectionItem" nav-item="shortBreak">short break</a></li>
+        <li><a class="selectionItem" nav-item="longBreak">long break</a></li>
       </ul>
     </nav>
     <div class="timer">
       <div class="outsideCircle"> <!--outside circle-->
         <div class="darkerCircle"> <!--darker cirle-->
           <svg>
-            <circle cx="50%" cy="50%" r="165" />
+            <circle cx="50%" cy="50%" r="165" stroke-dasharray="1037" />
           </svg>
           <div class="timer-text">
-            <text class="clock" x="50%" y="210" text-anchor="middle">25:00</text>
+            <text class="clock" x="50%" y="210" text-anchor="middle">01:00</text>
             <text class="action" x="50%" y="50%" text-anchor="middle">START</text>
           </div>
         </div>
@@ -61,7 +61,7 @@
               </div>
               <div class="timeSelection">
                 <label for="shortBreakTime">short break</label>
-                <input id="shortBreakTime" type="number" value=5 min=1 max=15>
+                <input id="shortBreakTime" type="number" value=1 min=1 max=15>
                 <img class="topArrow" src="../assets/icon-arrow-up.svg">
                 <img class="bottomArrow" src="../assets/icon-arrow-down.svg">
                 </input>
