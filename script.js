@@ -1,11 +1,3 @@
-/*
-To Do
-Countdown animation
-Tablet & Mobile views
-Cypress
-
-*/
-
 (function () {
 
   let settings = {
@@ -16,11 +8,11 @@ Cypress
     font: "Kumbh Sans",
     color: "#f87070"
   };
-  let isPaused = true;
+
   let timerDuration, minutes, seconds, getSelectedTimer, countdownStrokeOffsetDistance;
   let timerStatus = "start";  //start or running or finished or paused
 
-  const clockSelections = document.querySelectorAll('.selection > ul > li > a');
+  const clockSelections = document.querySelectorAll('.selection > ul > li');
 
   function setColor() {
     document.querySelector('circle').style.stroke = settings.color;
@@ -29,31 +21,41 @@ Cypress
 
   const settingFont = () => {
     let fontSelection = settings.font;
-    document.querySelectorAll('.selectionItem, .clock, .action').forEach((element) => {
-      element.style.fontFamily = settings.font;
-    });
+    document.body.style.fontFamily = fontSelection;
 
-    switch (fontSelection) {
-      case "Kumbh Sans":
-        document.querySelector('.clock').style.letterSpacing = "-5px";
-        document.querySelector('.clock').style.fontWeight = "bold";
-        document.querySelectorAll('.selectionItem').forEach((element) => {
-          element.style.fontSize = "14px";
-        });
-        break;
-      case "Roboto Slab":
-        document.querySelector('.clock').style.letterSpacing = "0px";
-        document.querySelector('.clock').style.fontWeight = "bold";
-        document.querySelectorAll('.selectionItem').forEach((element) => {
-          element.style.fontSize = "14px";
-        });
-        break;
-      case "Space Mono":
-        document.querySelector('.clock').style.letterSpacing = "-10px";
-        document.querySelector('.clock').style.fontWeight = "normal";
-        document.querySelectorAll('.selectionItem').forEach((element) => {
-          element.style.fontSize = "13px";
-        });
+    if (fontSelection === "Kumbh Sans") {
+      document.querySelectorAll('.selectionItem').forEach((element) => {
+        if (element.classList.contains("selected")) {
+          element.classList = "selectionItem selected kumbhSansNav"
+        }
+        else {
+          element.classList = "selectionItem kumbhSansNav"
+        }
+      });
+      document.querySelector('.clock').classList = "clock kumbhSansClock";
+    }
+    else if (fontSelection === "Roboto Slab") {
+      document.querySelectorAll('.selectionItem').forEach((element) => {
+        if (element.classList.contains("selected")) {
+          element.classList = "selectionItem selected robotoSlabNav"
+        }
+        else {
+          element.classList = "selectionItem robotoSlabNav"
+        }
+      });
+      document.querySelector('.clock').classList = "clock robotoSlabClock";
+    }
+
+    else {
+      document.querySelectorAll('.selectionItem').forEach((element) => {
+        if (element.classList.contains("selected")) {
+          element.classList = "selectionItem selected spaceMonoNav"
+        }
+        else {
+          element.classList = "selectionItem spaceMonoNav"
+        }
+      });
+      document.querySelector('.clock').classList = "clock spaceMonoClock";
     }
   };
 
@@ -81,12 +83,12 @@ Cypress
   // need to reset animation
   clockSelections.forEach((selection) => {
     selection.addEventListener('click', () => {
-      let currentSelection = document.querySelector('a.selected');
+      let currentSelection = document.querySelector('li.selected');
       currentSelection.style.backgroundColor = "";
-      currentSelection.classList.remove('selected');
-      selection.classList.add('selected');
+      currentSelection.classList.toggle('selected');
+      selection.classList.toggle('selected');
       selection.style.backgroundColor = settings.color;
-      settings.selectedTimer = document.querySelector('a.selected').getAttribute('nav-item');
+      settings.selectedTimer = document.querySelector('li.selected').getAttribute('nav-item');
       settingClockTime();
     });
   });
@@ -120,10 +122,14 @@ Cypress
 
   document.querySelector('circle').addEventListener('click', function () {
     //start the timer again
+    const element = document.querySelector('circle');
+    const style = getComputedStyle(element);
+    const strokeDashArray = parseInt(style.strokeDasharray, 10);
+
     if (timerStatus == "start" || timerStatus == "finished") {
       settingClockTime();
       timerStatus = "running";
-      countdownStrokeOffsetDistance = 1037 / timerDuration;
+      countdownStrokeOffsetDistance = strokeDashArray / timerDuration;
       startTimer(timerDuration);
     }
 
@@ -141,6 +147,15 @@ Cypress
     }
   });
 
+  document.querySelector('circle').addEventListener('mouseenter', function () {
+    const currentSelectedColor = settings.color;
+    document.querySelector('.action').style.color = currentSelectedColor;
+  });
+
+  document.querySelector('circle').addEventListener('mouseleave', function () {
+    document.querySelector('.action').style.color = "#d7e0ff";
+  });
+
   /*===============================================================================
                                         Settings
 ===============================================================================*/
@@ -150,6 +165,7 @@ Cypress
   //Function to display settings form
   const openSettingsModal = () => {
     document.querySelector('#settings-modal').style.display = "block";
+    document.querySelector('#submit').style.backgroundColor = settings.color;
   };
   //Function to close settings form
   const closeSettingsModal = () => {
@@ -167,15 +183,16 @@ Cypress
   });
 
   //update time input fields by clicking on arrows
-  document.querySelectorAll('img').forEach((image) => {
-    if (image.classList == "topArrow") {
-      image.addEventListener("click", () => {
-        image.previousElementSibling.value++;
+  document.querySelectorAll('.arrow').forEach((arrow) => {
+    if (arrow.classList[0] == "topArrow") {
+      arrow.addEventListener("click", () => {
+        arrow.parentNode.previousElementSibling.value++;
       });
     }
-    else if (image.classList == "bottomArrow") {
-      image.addEventListener("click", () => {
-        image.offsetParent.children[1].value--;
+
+    else if (arrow.classList[0] == "bottomArrow") {
+      arrow.addEventListener("click", () => {
+        arrow.parentNode.previousElementSibling.value--;
       });
     }
   });
@@ -183,18 +200,21 @@ Cypress
   function submittingSettingsForm(event) {
     event.preventDefault();
     let selectedFont, selectedColor;
+
     document.querySelectorAll('input[name="fontSelection"]').forEach((selection) => {
       if (selection.checked == true) {
         selectedFont = selection.value;
       }
     });
+
     document.querySelectorAll('input[name="colorSelection"]').forEach((selection) => {
       if (selection.checked == true) {
         selectedColor = selection.value;
       }
     });
+
     settings = {
-      pomodoroTime: document.querySelector('#pomodoroTime').value,
+      pomodoro: document.querySelector('#pomodoroTime').value,
       shortBreak: document.querySelector('#shortBreakTime').value,
       longBreak: document.querySelector('#longBreakTime').value,
       font: selectedFont,
@@ -207,6 +227,5 @@ Cypress
   }
 
   document.querySelector('#submit').addEventListener('click', submittingSettingsForm);
-
 
 })();
