@@ -9,7 +9,7 @@
     color: "#f87070"
   };
 
-  let timerDuration, minutes, seconds, getSelectedTimer, countdownStrokeOffsetDistance;
+  let timerDuration, minutes, seconds, getSelectedTimer, countdownStrokeOffsetDistance, countdownTimer;
   let timerStatus = "start";  //start or running or finished or paused
 
   const clockSelections = document.querySelectorAll('.selection > ul > li');
@@ -89,6 +89,11 @@
       selection.classList.toggle('selected');
       selection.style.backgroundColor = settings.color;
       settings.selectedTimer = document.querySelector('li.selected').getAttribute('nav-item');
+      clearInterval(countdownTimer);
+      getSelectedTimer = settings.selectedTimer;
+      timerDuration = settings[getSelectedTimer] * 60;
+      document.querySelector('.action').textContent = "START";
+      timerStatus = "start";
       settingClockTime();
     });
   });
