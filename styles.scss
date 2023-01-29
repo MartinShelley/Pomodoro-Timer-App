@@ -76,27 +76,19 @@ circle:hover,
 
   ul {
     display: flex;
-    // padding-top: 20px;
     list-style: none;
-    // padding-left: 10px;
     padding: 0;
     align-items: center;
 
     li {
-      // width: 120px;
-      // display: inline;
       font-weight: bold;
       font-style: normal;
       color: $timerColor;
       opacity: 0.4;
-      // font-size: 14px;
       padding: 20px;
     }
 
-    .kumbhSansNav {
-      font-size: 14px;
-    }
-
+    .kumbhSansNav,
     .robotoSlabNav {
       font-size: 14px;
     }
@@ -131,12 +123,8 @@ circle:hover,
     background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
     box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
     border-radius: 50%;
-    // margin-left: auto;
-    // margin-right: auto;
 
     .darkerCircle {
-      // position: relative;
-      // top: 22px;
       width: 366px;
       height: 366px;
       background: #161932;
@@ -144,8 +132,6 @@ circle:hover,
       display: flex;
       align-items: center;
       justify-content: center;
-      // margin-left: auto;
-      // margin-right: auto;
 
       .timer-text {
         text-align: center;
@@ -153,14 +139,11 @@ circle:hover,
         text {
           font-weight: bold;
           color: $timerColor;
-          // position: absolute;
         }
 
         .clock {
           font-size: 100px;
           fill: $timerColor;
-          // top: 125px;
-          // left: 62.5px;
         }
 
         .kumbhSansClock {
@@ -182,8 +165,6 @@ circle:hover,
           font-size: 16px;
           letter-spacing: 15px;
           margin-right: -15px;
-          // top: 265px;
-          // left: 130px;
         }
       }
 
@@ -191,11 +172,6 @@ circle:hover,
         position: absolute;
         height: 355px;
         width: 355px;
-        // position: absolute;
-        // top: 13.5px;
-        // left: 13.5px;
-        // margin-left: auto;
-        // margin-right: auto;
         transform: rotateY(-180deg) rotateZ(-90deg);
 
         circle {
@@ -210,24 +186,6 @@ circle:hover,
     }
   }
 }
-
-// .countdown {
-//   animation-name: countdown;
-//   animation-timing-function: linear;
-//   animation-play-state: paused;
-//   animation-fill-mode: forwards;
-//   animation-duration: calc(25*60)s;
-// }
-
-// @keyframes countdown {
-//   0% {
-//     stroke-dashoffset: 0;
-//   }
-
-//   100% {
-//     stroke-dashoffset: -1037;
-//   }
-// }
 
 #settings-modal {
   display: none;
@@ -248,7 +206,6 @@ circle:hover,
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
-    // width: 540px;
     height: 464px;
     border-radius: 25px;
     color: $settingsTextColor;
@@ -263,18 +220,13 @@ circle:hover,
       margin: 34px 0 24px;
 
       h2 {
-        // font-family: "Kumbh Sans";
         font-weight: 700;
         font-size: 28px;
-        // margin-left: 40px;
-        // margin-top: 34px;
         margin: 0;
       }
 
 
       img {
-        // margin-right: 38px;
-        // margin-top: 47px;
         width: 14px;
         height: 14px;
       }
@@ -299,7 +251,6 @@ circle:hover,
     }
 
     .timeSection {
-
       h3 {
         margin-bottom: 19px;
       }
@@ -321,7 +272,6 @@ circle:hover,
             font-style: normal;
             color: $backgroundColor;
             opacity: 0.4;
-            // margin-bottom: 8px;
           }
 
           .input {
@@ -341,7 +291,6 @@ circle:hover,
               padding-left: 16px;
               opacity: 1;
               cursor: default;
-              // -moz-appearance: textfield;
             }
 
             /* Chrome, Safari, Edge, Opera */
@@ -357,25 +306,9 @@ circle:hover,
               gap: 9px;
               width: fit-content;
               position: absolute;
-              // top: 16px;
               right: 16px;
-              // bottom: 16px;
             }
           }
-
-
-
-          // .topArrow {
-          //   position: absolute;
-          //   top: 38px;
-          //   left: 112px;
-          // }
-
-          // .bottomArrow {
-          //   position: absolute;
-          //   top: 51px;
-          //   left: 112px;
-          // }
         }
       }
     }
@@ -385,15 +318,6 @@ circle:hover,
       display: flex;
       justify-content: space-between;
       align-items: center;
-      // padding: 24px 0;
-      // margin-right: 38px;
-
-      // input[type="radio"]:not(:checked)+span::before {
-      //   content: "";
-      //   border-radius: 50%;
-      //   border-color: #EFF1FA;
-      //   border-width: 1px;
-      // }
     }
 
     .radioButtons {
@@ -412,8 +336,6 @@ circle:hover,
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
-
       }
 
       label {
@@ -432,7 +354,6 @@ circle:hover,
           display: block;
           height: 40px;
           width: 40px;
-          // padding: 4px;
           border-radius: 50%;
         }
       }
@@ -504,15 +425,6 @@ circle:hover,
             content: "";
           }
 
-          // input[type="radio"]:checked+span>a {
-          //   display: inline-block;
-          //   width: 5px;
-          //   height: 12px;
-          //   border-bottom: 2px solid $settingsTextColor;
-          //   border-right: 2px solid $settingsTextColor;
-          //   transform: rotate(45deg);
-          // }
-
           #redRadioButton {
             background: $red;
           }
@@ -545,7 +457,6 @@ circle:hover,
   }
 }
 
-//Mobile devices
 @media screen and (max-width: 415px) {
   html {
     overflow-x: hidden;
@@ -564,14 +475,8 @@ circle:hover,
         padding: 18px 22px;
       }
 
-      .kumbhSansNav {
-        font-size: 12px;
-      }
-
-      .robotoSlabNav {
-        font-size: 12px;
-      }
-
+      .kumbhSansNav,
+      .robotoSlabNav,
       .spaceMonoNav {
         font-size: 12px;
       }
@@ -706,7 +611,5 @@ circle:hover,
         bottom: -26.5px;
       }
     }
-
   }
-
 }

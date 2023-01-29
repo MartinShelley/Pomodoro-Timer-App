@@ -96,7 +96,6 @@
 
   function startTimer(timer) {
     document.querySelector('.action').textContent = "PAUSE";
-
     countdownTimer = setInterval(function () {
       //if timer has finished
       if (timer <= 0) {
@@ -121,18 +120,18 @@
   }
 
   document.querySelector('circle').addEventListener('click', function () {
-    //start the timer again
     const element = document.querySelector('circle');
     const style = getComputedStyle(element);
     const strokeDashArray = parseInt(style.strokeDasharray, 10);
 
+    //start timer
     if (timerStatus == "start" || timerStatus == "finished") {
       settingClockTime();
       timerStatus = "running";
       countdownStrokeOffsetDistance = strokeDashArray / timerDuration;
       startTimer(timerDuration);
     }
-
+    //continue timer
     else if (timerStatus == "paused") {
       timerStatus = "running";
       startTimer(timerDuration);
@@ -162,16 +161,15 @@
 
   const settingsIcon = document.querySelector('.settings-icon');
 
-  //Function to display settings form
   const openSettingsModal = () => {
     document.querySelector('#settings-modal').style.display = "block";
     document.querySelector('#submit').style.backgroundColor = settings.color;
   };
-  //Function to close settings form
+
   const closeSettingsModal = () => {
     document.querySelector('#settings-modal').style.display = "none";
   };
-  //Adds event listener to the settings icon to open the Settings form
+
   settingsIcon.addEventListener('click', () => {
     openSettingsModal();
   });
@@ -182,7 +180,6 @@
     });
   });
 
-  //update time input fields by clicking on arrows
   document.querySelectorAll('.arrow').forEach((arrow) => {
     if (arrow.classList[0] == "topArrow") {
       arrow.addEventListener("click", () => {

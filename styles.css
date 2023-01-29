@@ -80,9 +80,7 @@ circle:hover,
   opacity: 0.4;
   padding: 20px;
 }
-.selection ul .kumbhSansNav {
-  font-size: 14px;
-}
+.selection ul .kumbhSansNav,
 .selection ul .robotoSlabNav {
   font-size: 14px;
 }
@@ -404,13 +402,9 @@ circle:hover,
   .selection ul .selected {
     padding: 18px 22px;
   }
-  .selection ul .kumbhSansNav {
-    font-size: 12px;
-  }
-  .selection ul .robotoSlabNav {
-    font-size: 12px;
-  }
-  .selection ul .spaceMonoNav {
+  .selection ul .kumbhSansNav,
+.selection ul .robotoSlabNav,
+.selection ul .spaceMonoNav {
     font-size: 12px;
   }
   .timer .outsideCircle {
