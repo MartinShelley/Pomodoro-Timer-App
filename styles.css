@@ -9,6 +9,10 @@ body {
   font-family: "Kumbh Sans";
 }
 
+main {
+  padding-bottom: 56px;
+}
+
 .title,
 .settings-icon {
   display: block;
@@ -67,12 +71,14 @@ circle:hover,
   justify-content: center;
   font-size: 14px;
 }
+
 .selection ul {
   display: flex;
   list-style: none;
   padding: 0;
   align-items: center;
 }
+
 .selection ul li {
   font-weight: bold;
   font-style: normal;
@@ -80,13 +86,16 @@ circle:hover,
   opacity: 0.4;
   padding: 20px;
 }
+
 .selection ul .kumbhSansNav,
 .selection ul .robotoSlabNav {
   font-size: 14px;
 }
+
 .selection ul .spaceMonoNav {
   font-size: 13px;
 }
+
 .selection ul .selected {
   background-color: #f87070;
   border-radius: 26.5px;
@@ -102,6 +111,7 @@ circle:hover,
   align-items: center;
   justify-content: center;
 }
+
 .timer .outsideCircle {
   width: 410px;
   height: 410px;
@@ -112,6 +122,7 @@ circle:hover,
   box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
   border-radius: 50%;
 }
+
 .timer .outsideCircle .darkerCircle {
   width: 366px;
   height: 366px;
@@ -121,40 +132,49 @@ circle:hover,
   align-items: center;
   justify-content: center;
 }
+
 .timer .outsideCircle .darkerCircle .timer-text {
   text-align: center;
 }
+
 .timer .outsideCircle .darkerCircle .timer-text text {
   font-weight: bold;
   color: #d7e0ff;
 }
+
 .timer .outsideCircle .darkerCircle .timer-text .clock {
   font-size: 100px;
   fill: #d7e0ff;
 }
+
 .timer .outsideCircle .darkerCircle .timer-text .kumbhSansClock {
   font-weight: bold;
   letter-spacing: -5px;
 }
+
 .timer .outsideCircle .darkerCircle .timer-text .robotoSlabClock {
   font-weight: bold;
   letter-spacing: 0px;
 }
+
 .timer .outsideCircle .darkerCircle .timer-text .spaceMonoClock {
   font-weight: normal;
   letter-spacing: -10px;
 }
+
 .timer .outsideCircle .darkerCircle .timer-text .action {
   font-size: 16px;
   letter-spacing: 15px;
   margin-right: -15px;
 }
+
 .timer .outsideCircle .darkerCircle svg {
   position: absolute;
   height: 355px;
   width: 355px;
   transform: rotateY(-180deg) rotateZ(-90deg);
 }
+
 .timer .outsideCircle .darkerCircle svg circle {
   stroke: #f87070;
   stroke-width: 10px;
@@ -167,6 +187,7 @@ circle:hover,
 #settings-modal {
   display: none;
 }
+
 #settings-modal .backdrop {
   position: fixed;
   top: 0;
@@ -176,6 +197,7 @@ circle:hover,
   background: rgba(10, 12, 28, 0.5);
   z-index: 2;
 }
+
 #settings-modal .settings {
   position: absolute;
   left: 50%;
@@ -189,50 +211,60 @@ circle:hover,
   z-index: 3;
   font-family: "Kumbh Sans";
 }
+
 #settings-modal .settings .settingsHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 34px 0 24px;
 }
+
 #settings-modal .settings .settingsHeader h2 {
   font-weight: 700;
   font-size: 28px;
   margin: 0;
 }
+
 #settings-modal .settings .settingsHeader img {
   width: 14px;
   height: 14px;
 }
+
 #settings-modal .settings .horizontalLine {
   width: calc(100% + 80px);
   border: 0;
   border-top: 1px solid #e3e1e1;
   margin: 0 -40px 24px;
 }
+
 #settings-modal .settings .settingsSection {
   margin: 0;
 }
+
 #settings-modal .settings .settingsSection h3 {
   font-size: 13px;
   letter-spacing: 5px;
   font-weight: bold;
   margin: 0;
 }
+
 #settings-modal .settings .timeSection h3 {
   margin-bottom: 19px;
 }
+
 #settings-modal .settings .timeSection .timeInputs {
   display: flex;
   gap: 20px;
   margin-bottom: 24px;
 }
+
 #settings-modal .settings .timeSection .timeInputs .timeSelection {
   display: flex;
   flex-direction: column;
   gap: 8px;
   position: relative;
 }
+
 #settings-modal .settings .timeSection .timeInputs .timeSelection label {
   font-size: 12px;
   font-weight: bold;
@@ -240,11 +272,13 @@ circle:hover,
   color: #1e213f;
   opacity: 0.4;
 }
+
 #settings-modal .settings .timeSection .timeInputs .timeSelection .input {
   display: flex;
   align-items: center;
   /* Chrome, Safari, Edge, Opera */
 }
+
 #settings-modal .settings .timeSection .timeInputs .timeSelection .input input[type=number] {
   background: #eff1fa;
   height: 48px;
@@ -259,11 +293,13 @@ circle:hover,
   opacity: 1;
   cursor: default;
 }
+
 #settings-modal .settings .timeSection .timeInputs .timeSelection .input input::-webkit-outer-spin-button,
 #settings-modal .settings .timeSection .timeInputs .timeSelection .input input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 #settings-modal .settings .timeSection .timeInputs .timeSelection .input .inputArrows {
   display: flex;
   flex-direction: column;
@@ -274,16 +310,19 @@ circle:hover,
   position: absolute;
   right: 16px;
 }
+
 #settings-modal .settings .fontSection,
 #settings-modal .settings .colorSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 #settings-modal .settings .radioButtons {
   display: flex;
   gap: 16px;
 }
+
 #settings-modal .settings .radioButtons label:before {
   content: "";
   border-radius: 50%;
@@ -297,47 +336,57 @@ circle:hover,
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 #settings-modal .settings .radioButtons label {
   display: flex;
   flex-direction: column;
   position: relative;
 }
+
 #settings-modal .settings .radioButtons label input[type=radio] {
   width: 0;
   height: 0;
   opacity: 0;
   position: absolute;
 }
+
 #settings-modal .settings .radioButtons label .customRadio {
   display: block;
   height: 40px;
   width: 40px;
   border-radius: 50%;
 }
+
 #settings-modal .settings .fontSection {
   border-color: rgba(22, 25, 50, 0.1);
   border-width: 1px 0;
   border-style: solid;
   padding: 24px 0;
 }
+
 #settings-modal .settings .fontSection .radioButtons label span {
   display: flex;
   flex-direction: column;
 }
-#settings-modal .settings .fontSection .radioButtons input[type=radio]:checked + span {
+
+#settings-modal .settings .fontSection .radioButtons input[type=radio]:checked+span {
   background: #161932;
   color: white;
   opacity: 1;
 }
+
 #settings-modal .settings .fontSection .radioButtons #kumbhSansFont {
   font-family: "Kumbh Sans";
 }
+
 #settings-modal .settings .fontSection .radioButtons #robotoSlabFont {
   font-family: "Roboto Slab";
 }
+
 #settings-modal .settings .fontSection .radioButtons #spaceMonoFont {
   font-family: "Space Mono";
 }
+
 #settings-modal .settings .customFontRadio {
   display: flex;
   justify-content: center;
@@ -347,15 +396,18 @@ circle:hover,
   background: #eff1fa;
   opacity: 0.73;
 }
+
 #settings-modal .settings .colorSection {
   padding: 24px 0 32px;
 }
-#settings-modal .settings .colorSection .radioButtons label input[type=radio]:checked + span {
+
+#settings-modal .settings .colorSection .radioButtons label input[type=radio]:checked+span {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#settings-modal .settings .colorSection .radioButtons label input[type=radio]:checked + span::after {
+
+#settings-modal .settings .colorSection .radioButtons label input[type=radio]:checked+span::after {
   display: inline-block;
   width: 5px;
   height: 12px;
@@ -364,15 +416,19 @@ circle:hover,
   transform: rotate(45deg);
   content: "";
 }
+
 #settings-modal .settings .colorSection .radioButtons label #redRadioButton {
   background: #f87070;
 }
+
 #settings-modal .settings .colorSection .radioButtons label #turquoiseRatioButton {
   background: #70f3f8;
 }
+
 #settings-modal .settings .colorSection .radioButtons label #pinkRadioButton {
   background: #d881f8;
 }
+
 #settings-modal #submit {
   width: 140px;
   height: 53px;
@@ -392,47 +448,59 @@ circle:hover,
   html {
     overflow-x: hidden;
   }
+
   .selection {
     width: 327px;
   }
+
   .selection ul li {
     font-size: 12px;
     padding: 0 16px;
   }
+
   .selection ul .selected {
     padding: 18px 22px;
   }
+
   .selection ul .kumbhSansNav,
-.selection ul .robotoSlabNav,
-.selection ul .spaceMonoNav {
+  .selection ul .robotoSlabNav,
+  .selection ul .spaceMonoNav {
     font-size: 12px;
   }
+
   .timer .outsideCircle {
     width: 300px;
     height: 300px;
   }
+
   .timer .outsideCircle .darkerCircle {
     width: 267.8px;
     height: 267.8px;
   }
+
   .timer .outsideCircle .darkerCircle svg {
     width: 248.05px;
     height: 248.05px;
   }
+
   .timer .outsideCircle .darkerCircle svg circle {
     r: 119;
     stroke-dasharray: 750;
   }
+
   .timer .outsideCircle .darkerCircle .timer-text .clock {
     font-size: 80px;
   }
+
   .timer .outsideCircle .darkerCircle .timer-text .kumbhSansClock {
     letter-spacing: -4px;
   }
+
   .timer .outsideCircle .darkerCircle .timer-text .action {
     font-size: 14px;
     letter-spacing: 13.13px;
   }
+
   #settings-modal .settings {
     width: 279px;
     height: 549px;
@@ -441,36 +509,45 @@ circle:hover,
     transform: translate(-50%, -25%);
     border-radius: 15px;
   }
+
   #settings-modal .settings .settingsHeader {
     margin: 24px 0 23px;
   }
+
   #settings-modal .settings .settingsHeader h2 {
     font-size: 20px;
   }
+
   #settings-modal .settings .horizontalLine {
     width: 327px;
     margin: 0 -24px 24px;
   }
+
   #settings-modal .settings .topSettingsSection h2 {
     font-size: 20px;
     margin-top: 24px;
     margin-left: 24px;
   }
+
   #settings-modal .settings .topSettingsSection img {
     margin-top: 29px;
     margin-right: 24px;
   }
+
   #settings-modal .settings .settingsSection h3 {
     text-align: center;
     font-size: 11px;
   }
+
   #settings-modal .settings .timeSection h3 {
     margin-bottom: 18px;
   }
+
   #settings-modal .settings .timeSection .timeInputs {
     flex-direction: column;
     gap: 8px;
   }
+
   #settings-modal .settings .timeSection .timeInputs .timeSelection {
     display: flex;
     flex-direction: row;
@@ -478,21 +555,28 @@ circle:hover,
     justify-content: space-between;
     align-items: center;
   }
+
   #settings-modal .settings .timeSection .timeInputs .timeSelection .input input[type=number] {
     height: 40px;
   }
+
   #settings-modal .settings .fontSection,
-#settings-modal .settings .colorSection {
+  #settings-modal .settings .colorSection {
     flex-direction: column;
   }
+
   #settings-modal .settings .fontSection {
     gap: 15px;
   }
+
   #settings-modal .settings .colorSection {
     padding: 16px 0 32px;
     gap: 18px;
   }
+
   #settings-modal .settings #submit {
     bottom: -26.5px;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */

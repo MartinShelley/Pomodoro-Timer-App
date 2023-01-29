@@ -3,7 +3,7 @@
   let settings = {
     selectedTimer: "pomodoro",
     pomodoro: 25,
-    shortBreak: 1,
+    shortBreak: 5,
     longBreak: 15,
     font: "Kumbh Sans",
     color: "#f87070"
